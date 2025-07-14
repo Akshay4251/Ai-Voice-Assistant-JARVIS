@@ -1,15 +1,17 @@
 from flask import Flask, request, jsonify
-from Backend.Model import FirstLayerDMM  
+from Backend.Model import FirstLayerDMM  # Make sure this works after deployment
 
 app = Flask(__name__)
 
+# Health check endpoint
 @app.route('/', methods=['GET'])
 def home():
     return jsonify({"message": "Jarvis Decision-Making API is running."})
 
 
-@app.route('/classify', methods=['POST'])
-def classify_query():
+# Main Jarvis processing endpoint
+@app.route('/run', methods=['POST'])
+def run_jarvis():
     try:
         data = request.get_json()
 
@@ -17,9 +19,11 @@ def classify_query():
             return jsonify({"error": "No 'message' provided in request."}), 400
 
         user_message = data['message']
+
+        # Call your model processing logic from FirstLayerDMM
         result = FirstLayerDMM(prompt=user_message)
 
-        return jsonify({"tasks": result})
+        return jsonify({"response": result})
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
