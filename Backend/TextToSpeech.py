@@ -5,8 +5,8 @@ import edge_tts
 import os 
 from dotenv import dotenv_values
 
-env_vars = dotenv_values(".env")
-AssistantVoice = env_vars.get("AssistantVoice")
+# env_vars = dotenv_values(".env")
+AssistantVoice = os.getenv("AssistantVoice")
 
 async def TextToAudioFile(text)->None:
     file_path = r"Data\speech.mp3"

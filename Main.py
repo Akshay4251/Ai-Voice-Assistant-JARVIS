@@ -22,9 +22,9 @@ import threading
 import json
 import os
 
-env_vars = dotenv_values(".env")
-Username = env_vars.get("Username")
-Assistantname = env_vars.get("Assistantname")
+# env_vars = dotenv_values(".env")
+Username = os.getenv("Username")
+Assistantname = os.getenv("Assistantname")
 DefaultMessage = f'''{Username} : Hello {Assistantname}, How are you?
 {Assistantname} : Welcome {Username}. I am doing well. How may i help you?'''
 subprocesses = []

@@ -7,9 +7,9 @@ from dotenv import dotenv_values
 import os 
 import mtranslate as mt
 
-env_vars = dotenv_values(".env")
+# env_vars = dotenv_values(".env")
 
-InputLanguage = env_vars.get("InputLanguage")
+InputLanguage = os.getenv("InputLanguage")
 
 HtmlCode = '''<!DOCTYPE html>
 <html lang="en">

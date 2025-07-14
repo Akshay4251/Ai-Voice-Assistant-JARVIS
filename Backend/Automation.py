@@ -12,8 +12,8 @@ import keyboard
 import asyncio
 import os 
 
-env_vars = dotenv_values(".env")
-GroqAPIKey = env_vars.get("GroqAPIKey")
+# env_vars = dotenv_values(".env")
+GroqAPIKey = os.getenv("GroqAPIKey")
 
 classes = ["zCubwf", "hgKElc", "LTKOO sY7ric", "Z0LcW", "gsrt vk_bk FzvWSb YwPhnf", "pclqee", "tw-Data-text tw-text-small tw-ta",
            "IZ6rdc", "05uR6d LTKOO", "vlzY6d", "webanswers-webanswers_table__webanswers-table", "dDoNo ikb4Bb gsrt", "sXLaOe",

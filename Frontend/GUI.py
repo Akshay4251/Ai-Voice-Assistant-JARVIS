@@ -5,8 +5,8 @@ from dotenv import dotenv_values
 import sys
 import os 
 
-env_vars = dotenv_values(".env")
-Assistantname = env_vars.get("Assistantname")
+# env_vars = dotenv_values(".env")
+Assistantname = os.getenv("Assistantname")
 current_dir = os.getcwd()
 old_chat_message = ""
 TempDirPath = rf"{current_dir}\Frontend\Files"
